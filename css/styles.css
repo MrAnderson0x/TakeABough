@@ -809,6 +809,61 @@ p { margin-bottom: 16px; }
   color: rgba(255,255,255,0.5);
 }
 
+/* --- Review Form --- */
+.review-form-container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.review-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-field label {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.review-field input,
+.review-field select,
+.review-field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.review-field input::placeholder,
+.review-field textarea::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.review-field select option {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .review-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- Stats Section --- */
 .stats-section {
   padding: 60px 0;

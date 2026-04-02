@@ -277,4 +277,82 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', handleResize);
   }
 
+  /* --- Reviews: Google Sheet Integration --- */
+  // SET YOUR GOOGLE APPS SCRIPT WEB APP URL HERE:
+  var REVIEWS_SCRIPT_URL = '';
+
+  // Load approved reviews from Google Sheet
+  function loadApprovedReviews() {
+    if (!REVIEWS_SCRIPT_URL) return; // Skip if not configured yet
+    fetch(REVIEWS_SCRIPT_URL)
+      .then(function(response) { return response.json(); })
+      .then(function(reviews) {
+        if (!reviews || reviews.length === 0) return;
+        var grid = document.getElementById('testimonials-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        reviews.forEach(function(r) {
+          var stars = '';
+          for (var i = 0; i < parseInt(r.rating); i++) stars += '\u2733';
+          var card = document.createElement('div');
+          card.className = 'testimonial-card animate-on-scroll';
+          card.innerHTML =
+            '<div class="testimonial-stars">' + '\u2733'.repeat(parseInt(r.rating)) + '</div>' +
+            '<p>"' + r.review.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '"</p>' +
+            '<div class="testimonial-author">' + r.name.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+            '<div class="testimonial-location">' + r.location.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+          grid.appendChild(card);
+        });
+      })
+      .catch(function() {}); // Silently fail, keep hardcoded reviews
+  }
+
+  loadApprovedReviews();
+
+  // Submit review form
+  var reviewForm = document.getElementById('reviewForm');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var statusEl = document.getElementById('reviewStatus');
+
+      if (!REVIEWS_SCRIPT_URL) {
+        statusEl.style.color = 'var(--yellow)';
+        statusEl.textContent = 'Review system is being set up. Please try again later.';
+        return;
+      }
+
+      var data = {
+        name: document.getElementById('reviewName').value.trim(),
+        location: document.getElementById('reviewLocation').value.trim(),
+        rating: document.getElementById('reviewRating').value,
+        review: document.getElementById('reviewText').value.trim()
+      };
+
+      var submitBtn = reviewForm.querySelector('button[type="submit"]');
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+
+      fetch(REVIEWS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function() {
+        statusEl.style.color = 'var(--yellow)';
+        statusEl.textContent = 'Thank you! Your review has been submitted and will appear after approval.';
+        reviewForm.reset();
+        submitBtn.textContent = 'Submit Review';
+        submitBtn.disabled = false;
+      })
+      .catch(function() {
+        statusEl.style.color = '#ff6b6b';
+        statusEl.textContent = 'Something went wrong. Please try again.';
+        submitBtn.textContent = 'Submit Review';
+        submitBtn.disabled = false;
+      });
+    });
+  }
+
 });

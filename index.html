@@ -327,7 +327,9 @@
       <h2 class="section-title">What Our Clients Say</h2>
       <p class="section-subtitle">Don't just take our word for it. Hear from the homeowners and property managers who trust Take A Bough with their trees.</p>
 
-      <div class="testimonials-grid">
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- Approved reviews from Google Sheet will load here -->
+        <!-- Fallback hardcoded reviews shown if script hasn't been set up yet -->
         <div class="testimonial-card animate-on-scroll">
           <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p>"We had a 90-foot Douglas Fir leaning toward our house after a windstorm, and the Take A Bough crew was onsite within two hours. They removed it safely and left our yard looking better than before. Professional from start to finish."</p>
@@ -348,6 +350,40 @@
           <div class="testimonial-author">David K.</div>
           <div class="testimonial-location">Mount Vernon, Skagit County</div>
         </div>
+      </div>
+
+      <!-- Leave a Review Form -->
+      <div class="review-form-container animate-on-scroll" style="margin-top:48px;">
+        <h3 style="color:var(--white);text-align:center;margin-bottom:24px;">Leave a Review</h3>
+        <form id="reviewForm" class="review-form">
+          <div class="review-form-grid">
+            <div class="review-field">
+              <label for="reviewName">Your Name *</label>
+              <input type="text" id="reviewName" name="name" required placeholder="e.g. John D.">
+            </div>
+            <div class="review-field">
+              <label for="reviewLocation">Location *</label>
+              <input type="text" id="reviewLocation" name="location" required placeholder="e.g. Everett, Snohomish County">
+            </div>
+            <div class="review-field">
+              <label for="reviewRating">Rating *</label>
+              <select id="reviewRating" name="rating" required>
+                <option value="">Select rating</option>
+                <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; (5 stars)</option>
+                <option value="4">&#9733;&#9733;&#9733;&#9733; (4 stars)</option>
+                <option value="3">&#9733;&#9733;&#9733; (3 stars)</option>
+                <option value="2">&#9733;&#9733; (2 stars)</option>
+                <option value="1">&#9733; (1 star)</option>
+              </select>
+            </div>
+          </div>
+          <div class="review-field">
+            <label for="reviewText">Your Review *</label>
+            <textarea id="reviewText" name="review" required rows="4" placeholder="Tell us about your experience..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large" style="background:var(--yellow);color:var(--black);border-color:var(--yellow);margin-top:16px;">Submit Review</button>
+          <div id="reviewStatus" style="margin-top:12px;text-align:center;"></div>
+        </form>
       </div>
     </div>
   </section>
