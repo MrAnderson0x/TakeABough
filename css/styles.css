@@ -10,33 +10,33 @@
 }
 
 :root {
-  /* Forest Greens */
-  --green-dark: #1a3a1a;
-  --green-mid: #2d5a27;
-  --green-light: #3d7a35;
-  --green-accent: #4a9e3f;
+  /* Forest Greens — darkened to let yellow dominate */
+  --green-dark: #14280a;
+  --green-mid: #1e3d12;
+  --green-light: #2a5520;
+  --green-accent: #3a7a2e;
 
-  /* Earth Tones */
-  --brown-dark: #7a6520;
-  --brown-mid: #9a7d1a;
-  --brown-light: #c4a22a;
+  /* Earth Tones — warmer/more golden */
+  --brown-dark: #8a7010;
+  --brown-mid: #b8960a;
+  --brown-light: #d4b020;
 
-  /* Neutrals */
-  --cream: #fdf8e8;
-  --cream-light: #fefcf3;
+  /* Neutrals — warmer cream tones */
+  --cream: #fef6d8;
+  --cream-light: #fffaeb;
   --white: #ffffff;
   --black: #1a1a1a;
   --gray-dark: #333333;
   --gray-mid: #666666;
   --gray-light: #999999;
-  --gray-border: #e8e2c8;
+  --gray-border: #e8d89a;
 
-  /* Accent — Yellow-forward */
-  --gold: #e6b800;
-  --gold-light: #f0cc33;
-  --yellow: #ffd700;
-  --yellow-light: #ffeb80;
-  --yellow-pale: #fff8dc;
+  /* Accent — Bold Yellow */
+  --gold: #f0c000;
+  --gold-light: #f5d540;
+  --yellow: #ffdd00;
+  --yellow-light: #ffed66;
+  --yellow-pale: #fff4c2;
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
@@ -143,27 +143,28 @@ p { margin-bottom: 16px; }
 }
 
 .btn-primary {
-  background: var(--yellow);
-  color: var(--green-dark);
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
   font-weight: 700;
 }
 
 .btn-primary:hover {
-  background: var(--yellow);
-  color: var(--green-dark);
+  background: var(--black);
+  color: var(--yellow);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--yellow);
-  border: 2px solid var(--yellow);
+  color: var(--black);
+  border: 2px solid var(--black);
 }
 
 .btn-secondary:hover {
-  background: var(--yellow);
-  color: var(--green-dark);
+  background: var(--black);
+  color: var(--yellow);
   transform: translateY(-2px);
 }
 
@@ -230,13 +231,21 @@ p { margin-bottom: 16px; }
 .logo-icon {
   width: 48px;
   height: 48px;
-  background: var(--green-mid);
+  background: var(--yellow);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: var(--white);
+  color: var(--green-dark);
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -364,7 +373,7 @@ p { margin-bottom: 16px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--green-dark) 0%, #0d2a0d 50%, var(--green-mid) 100%);
+  background: linear-gradient(135deg, #e6c300 0%, #ffdd00 50%, #f0c000 100%);
   margin-top: var(--nav-height);
   overflow: hidden;
 }
@@ -381,21 +390,21 @@ p { margin-bottom: 16px; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(26,58,26,0.7) 0%, rgba(26,58,26,0.5) 100%);
+  background: linear-gradient(180deg, rgba(255,221,0,0.2) 0%, rgba(230,195,0,0.1) 100%);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--white);
+  color: var(--green-dark);
   padding: 40px 24px;
   max-width: 800px;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
-  color: var(--white);
+  color: var(--green-dark);
   margin-bottom: 8px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
@@ -403,7 +412,7 @@ p { margin-bottom: 16px; }
 .hero-slogan {
   font-size: 1.35rem;
   font-style: italic;
-  color: var(--yellow);
+  color: var(--green-dark);
   margin-bottom: 24px;
   font-family: var(--font-heading);
 }
@@ -450,14 +459,14 @@ p { margin-bottom: 16px; }
 .badge-icon {
   width: 64px;
   height: 64px;
-  background: var(--green-mid);
+  background: var(--yellow);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(45,90,39,0.3);
+  box-shadow: 0 4px 12px rgba(200,170,0,0.3);
 }
 
 .badge-item h4 {
@@ -503,14 +512,23 @@ p { margin-bottom: 16px; }
 
 .service-card-image {
   height: 200px;
-  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  background: var(--yellow);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 3rem;
   position: relative;
   overflow: hidden;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .service-card-image::after {
@@ -582,12 +600,12 @@ p { margin-bottom: 16px; }
 
 .service-detail-image {
   height: 350px;
-  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  background: linear-gradient(135deg, #2a2200, #3d3000);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--yellow);
   font-size: 4rem;
   box-shadow: var(--shadow-md);
 }
@@ -653,12 +671,12 @@ p { margin-bottom: 16px; }
   width: 56px;
   height: 56px;
   min-width: 56px;
-  background: var(--green-mid);
+  background: var(--yellow);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 1.5rem;
 }
 
@@ -696,13 +714,13 @@ p { margin-bottom: 16px; }
 }
 
 .county-card:hover {
-  border-color: var(--green-light);
+  border-color: var(--yellow);
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
 }
 
 .county-card.primary {
-  background: var(--green-dark);
+  background: var(--black);
   color: var(--white);
   border-color: var(--yellow);
   border-width: 2px;
@@ -849,11 +867,14 @@ p { margin-bottom: 16px; }
 }
 
 .cta-banner .btn-primary {
-  background: var(--green-dark);
+  background: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
 }
 
 .cta-banner .btn-primary:hover {
-  background: var(--green-mid);
+  background: var(--black);
+  color: var(--yellow);
 }
 
 .cta-banner .btn-secondary {
@@ -870,20 +891,20 @@ p { margin-bottom: 16px; }
 
 /* --- Page Hero (interior pages) --- */
 .page-hero {
-  background: linear-gradient(135deg, var(--green-dark) 0%, #0d2a0d 100%);
+  background: var(--yellow);
   padding: 120px 0 60px;
   text-align: center;
   margin-top: var(--nav-height);
 }
 
 .page-hero h1 {
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 2.75rem;
   margin-bottom: 12px;
 }
 
 .page-hero p {
-  color: rgba(255,255,255,0.8);
+  color: var(--gray-dark);
   font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
@@ -902,15 +923,16 @@ p { margin-bottom: 16px; }
 }
 
 .about-image-placeholder {
-  height: 400px;
-  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  height: auto;
+  background: linear-gradient(135deg, #2a2200, #3d3000);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--yellow);
   font-size: 1.2rem;
   box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
 .about-values {
@@ -942,12 +964,12 @@ p { margin-bottom: 16px; }
 .value-icon {
   width: 64px;
   height: 64px;
-  background: var(--green-mid);
+  background: var(--yellow);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 1.5rem;
   margin: 0 auto 16px;
 }
@@ -1169,12 +1191,12 @@ p { margin-bottom: 16px; }
   width: 48px;
   height: 48px;
   min-width: 48px;
-  background: var(--green-mid);
+  background: var(--yellow);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--green-dark);
   font-size: 1.2rem;
 }
 
@@ -1439,8 +1461,8 @@ p { margin-bottom: 16px; }
   right: 30px;
   width: 48px;
   height: 48px;
-  background: var(--green-mid);
-  color: var(--white);
+  background: var(--yellow);
+  color: var(--green-dark);
   border: none;
   border-radius: 50%;
   display: flex;
