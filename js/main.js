@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
       var isValid = true;
 
       var requiredFields = contactForm.querySelectorAll('[required]');
@@ -220,24 +219,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      if (isValid) {
+      if (!isValid) {
+        e.preventDefault();
+      } else {
         var submitBtn = contactForm.querySelector('button[type="submit"]');
         if (submitBtn) {
-          var originalText = submitBtn.textContent;
           submitBtn.textContent = 'Sending...';
           submitBtn.disabled = true;
-
-          setTimeout(function () {
-            submitBtn.textContent = 'Message Sent!';
-            submitBtn.style.background = '#2d5a27';
-            contactForm.reset();
-
-            setTimeout(function () {
-              submitBtn.textContent = originalText;
-              submitBtn.disabled = false;
-              submitBtn.style.background = '';
-            }, 3000);
-          }, 1000);
         }
       }
     });
