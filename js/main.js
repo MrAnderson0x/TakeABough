@@ -4,6 +4,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* --- Contact Form Success Message --- */
+  if (window.location.search.indexOf('sent=true') !== -1) {
+    var contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.innerHTML = '<div style="text-align:center;padding:40px 20px;"><h3 style="color:var(--green-dark);margin-bottom:12px;">Thank You!</h3><p style="color:var(--gray-mid);">Your estimate request has been sent. We\'ll get back to you within one business day.</p></div>';
+    }
+  }
+
   /* --- Mobile Navigation --- */
   var hamburger = document.getElementById('hamburger');
   var navLinks = document.getElementById('navLinks');

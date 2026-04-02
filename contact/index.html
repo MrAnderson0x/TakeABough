@@ -143,16 +143,21 @@
         <!-- Right Column: Form -->
         <div class="contact-form animate-on-scroll">
           <h3>Request a Free Estimate</h3>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formsubmit.co/quote@takeabough.com" method="POST">
+            <input type="hidden" name="_subject" value="New Estimate Request from takeabough.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://takeabough.com/contact/?sent=true">
+            <input type="text" name="_honey" style="display:none">
+
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" id="firstName" name="First Name" required>
                 <div class="error-message"></div>
               </div>
               <div class="form-group">
                 <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required>
+                <input type="text" id="lastName" name="Last Name" required>
                 <div class="error-message"></div>
               </div>
             </div>
@@ -160,38 +165,38 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="Email" required>
                 <div class="error-message"></div>
               </div>
               <div class="form-group">
                 <label for="phone">Phone *</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="Phone" required>
                 <div class="error-message"></div>
               </div>
             </div>
 
             <div class="form-group">
               <label for="service">Service Needed</label>
-              <select id="service" name="service">
+              <select id="service" name="Service Needed">
                 <option value="">Select a service...</option>
-                <option value="tree-removal">Tree Removal</option>
-                <option value="trimming">Tree Trimming &amp; Pruning</option>
-                <option value="stump-grinding">Stump Grinding</option>
-                <option value="emergency">Emergency Storm Damage</option>
-                <option value="land-clearing">Land Clearing</option>
-                <option value="consultation">Arborist Consultation</option>
-                <option value="other">Other</option>
+                <option value="Tree Removal">Tree Removal</option>
+                <option value="Tree Trimming &amp; Pruning">Tree Trimming &amp; Pruning</option>
+                <option value="Stump Grinding">Stump Grinding</option>
+                <option value="Emergency Storm Damage">Emergency Storm Damage</option>
+                <option value="Land Clearing">Land Clearing</option>
+                <option value="Arborist Consultation">Arborist Consultation</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
             <div class="form-group">
               <label for="address">Property Address</label>
-              <input type="text" id="address" name="address" placeholder="Street address, city, state">
+              <input type="text" id="address" name="Property Address" placeholder="Street address, city, state">
             </div>
 
             <div class="form-group">
               <label for="message">Tell Us About Your Project *</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Describe the work you need done, number of trees, approximate size, any access concerns, etc."></textarea>
+              <textarea id="message" name="Project Details" rows="5" required placeholder="Describe the work you need done, number of trees, approximate size, any access concerns, etc."></textarea>
               <div class="error-message"></div>
             </div>
 
@@ -201,9 +206,9 @@
 
       </div>
 
-      <!-- Map Placeholder -->
-      <div class="map-placeholder animate-on-scroll" id="service-area">
-        Map — Serving Snohomish, King, Skagit, Island, Whatcom, Pierce, Kitsap, Chelan &amp; San Juan Counties
+      <!-- Service Area Map -->
+      <div class="map-container animate-on-scroll" id="service-area" style="margin-top:48px;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.12);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d690784.1825867384!2d-122.70!3d48.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549aabd2af1e5d7b%3A0x5c3f5e32e36e2611!2sSnohomish%20County%2C%20WA!5e0!3m2!1sen!2sus!4v1" width="100%" height="400" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Take A Bough Service Area - Snohomish County and surrounding areas"></iframe>
       </div>
     </div>
   </section>
