@@ -17,23 +17,26 @@
   --green-accent: #4a9e3f;
 
   /* Earth Tones */
-  --brown-dark: #8B4513;
-  --brown-mid: #A0522D;
-  --brown-light: #c4922a;
+  --brown-dark: #7a6520;
+  --brown-mid: #9a7d1a;
+  --brown-light: #c4a22a;
 
   /* Neutrals */
-  --cream: #f5f1eb;
-  --cream-light: #faf8f5;
+  --cream: #fdf8e8;
+  --cream-light: #fefcf3;
   --white: #ffffff;
   --black: #1a1a1a;
   --gray-dark: #333333;
   --gray-mid: #666666;
   --gray-light: #999999;
-  --gray-border: #e0ddd8;
+  --gray-border: #e8e2c8;
 
-  /* Accent */
-  --gold: #c4922a;
-  --gold-light: #d4a84a;
+  /* Accent — Yellow-forward */
+  --gold: #e6b800;
+  --gold-light: #f0cc33;
+  --yellow: #ffd700;
+  --yellow-light: #ffeb80;
+  --yellow-pale: #fff8dc;
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
@@ -119,8 +122,8 @@ p { margin-bottom: 16px; }
   content: '';
   display: block;
   width: 60px;
-  height: 3px;
-  background: var(--gold);
+  height: 4px;
+  background: var(--yellow);
   margin: 16px auto 0;
   border-radius: 2px;
 }
@@ -140,24 +143,26 @@ p { margin-bottom: 16px; }
 }
 
 .btn-primary {
-  background: var(--gold);
-  color: var(--white);
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
-  background: var(--brown-dark);
+  background: var(--yellow);
+  color: var(--green-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
 }
 
 .btn-secondary:hover {
-  background: var(--white);
+  background: var(--yellow);
   color: var(--green-dark);
   transform: translateY(-2px);
 }
@@ -272,7 +277,7 @@ p { margin-bottom: 16px; }
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold);
+  background: var(--yellow);
   transition: width 0.3s ease;
 }
 
@@ -299,8 +304,8 @@ p { margin-bottom: 16px; }
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--gold);
-  color: var(--white);
+  background: var(--yellow);
+  color: var(--green-dark);
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 700;
@@ -309,10 +314,10 @@ p { margin-bottom: 16px; }
 }
 
 .phone-btn:hover {
-  background: var(--brown-dark);
+  background: var(--yellow);
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
-  color: var(--white);
+  color: var(--green-dark);
 }
 
 .phone-btn svg {
@@ -398,7 +403,7 @@ p { margin-bottom: 16px; }
 .hero-slogan {
   font-size: 1.35rem;
   font-style: italic;
-  color: var(--gold-light);
+  color: var(--yellow);
   margin-bottom: 24px;
   font-family: var(--font-heading);
 }
@@ -421,8 +426,9 @@ p { margin-bottom: 16px; }
 
 /* --- Trust Badges --- */
 .trust-badges {
-  background: var(--cream);
+  background: var(--yellow-pale);
   padding: 40px 0;
+  border-top: 3px solid var(--yellow);
   border-bottom: 1px solid var(--gray-border);
 }
 
@@ -535,7 +541,7 @@ p { margin-bottom: 16px; }
 }
 
 .service-card-body a {
-  color: var(--gold);
+  color: var(--yellow);
   font-weight: 600;
   font-size: 0.9rem;
   display: inline-flex;
@@ -698,7 +704,8 @@ p { margin-bottom: 16px; }
 .county-card.primary {
   background: var(--green-dark);
   color: var(--white);
-  border-color: var(--green-dark);
+  border-color: var(--yellow);
+  border-width: 2px;
   grid-column: span 3;
 }
 
@@ -732,7 +739,7 @@ p { margin-bottom: 16px; }
 }
 
 .testimonials .section-title::after {
-  background: var(--gold);
+  background: var(--yellow);
 }
 
 .testimonials .section-subtitle {
@@ -760,7 +767,7 @@ p { margin-bottom: 16px; }
 }
 
 .testimonial-stars {
-  color: var(--gold);
+  color: var(--yellow);
   font-size: 1.2rem;
   margin-bottom: 16px;
   letter-spacing: 2px;
@@ -787,7 +794,9 @@ p { margin-bottom: 16px; }
 /* --- Stats Section --- */
 .stats-section {
   padding: 60px 0;
-  background: var(--cream);
+  background: var(--yellow-pale);
+  border-top: 3px solid var(--yellow);
+  border-bottom: 3px solid var(--yellow);
 }
 
 .stats-grid {
@@ -819,13 +828,13 @@ p { margin-bottom: 16px; }
 /* --- CTA Banner --- */
 .cta-banner {
   padding: 60px 0;
-  background: linear-gradient(135deg, var(--gold), var(--brown-dark));
+  background: linear-gradient(135deg, var(--yellow), var(--gold));
   text-align: center;
-  color: var(--white);
+  color: var(--green-dark);
 }
 
 .cta-banner h2 {
-  color: var(--white);
+  color: var(--green-dark);
   margin-bottom: 12px;
   font-size: 2.25rem;
 }
@@ -848,8 +857,8 @@ p { margin-bottom: 16px; }
 }
 
 .cta-banner .btn-secondary {
-  border-color: var(--white);
-  color: var(--white);
+  border-color: var(--green-dark);
+  color: var(--green-dark);
 }
 
 .cta-buttons {
@@ -1003,7 +1012,7 @@ p { margin-bottom: 16px; }
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  border: 3px solid var(--gold);
+  border: 3px solid var(--yellow);
 }
 
 .employee-photo {
@@ -1037,7 +1046,7 @@ p { margin-bottom: 16px; }
   position: absolute;
   top: 16px;
   right: 16px;
-  background: var(--gold);
+  background: var(--yellow);
   color: var(--white);
   padding: 8px 16px;
   border-radius: 20px;
@@ -1057,7 +1066,7 @@ p { margin-bottom: 16px; }
 }
 
 .employee-title {
-  color: var(--gold);
+  color: var(--yellow);
   font-weight: 600;
   font-size: 1.05rem;
   margin-bottom: 4px;
@@ -1113,7 +1122,7 @@ p { margin-bottom: 16px; }
 }
 
 .employee-consecutive h3 {
-  color: var(--gold);
+  color: var(--yellow);
   margin-bottom: 8px;
 }
 
@@ -1182,7 +1191,7 @@ p { margin-bottom: 16px; }
 }
 
 .contact-card a {
-  color: var(--gold);
+  color: var(--yellow);
   font-weight: 600;
 }
 
@@ -1310,12 +1319,12 @@ p { margin-bottom: 16px; }
 }
 
 .hours-item.emergency {
-  color: var(--gold);
+  color: var(--yellow);
   font-weight: 600;
 }
 
 .hours-item.emergency .time {
-  color: var(--gold);
+  color: var(--yellow);
   font-weight: 700;
 }
 
@@ -1361,7 +1370,7 @@ p { margin-bottom: 16px; }
 }
 
 .footer-slogan {
-  color: var(--gold-light);
+  color: var(--yellow);
   font-style: italic;
   font-family: var(--font-heading);
   margin-top: 8px;
@@ -1463,7 +1472,7 @@ p { margin-bottom: 16px; }
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--gold);
+  background: var(--yellow);
   padding: 12px 24px;
   z-index: 1000;
   box-shadow: 0 -4px 16px rgba(0,0,0,0.2);
@@ -1474,7 +1483,7 @@ p { margin-bottom: 16px; }
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: var(--white);
+  color: var(--green-dark);
   font-weight: 700;
   font-size: 1.1rem;
 }
