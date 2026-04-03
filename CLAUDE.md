@@ -9,7 +9,7 @@ Pages use clean URLs (directory-based, no .html extensions):
 - **services/index.html** — Services (`/services/`) — detailed service pages (tree removal, trimming, stump grinding, emergency, land clearing, arborist)
 - **about/index.html** — About (`/about/`) — company story, values, equipment (with truck photo), stats
 - **employee/index.html** — Employee of the Month (`/employee/`) — currently: Snuggies the Cat, March 2026
-- **contact/index.html** — Contact (`/contact/`) — contact form, business hours, service area map placeholder
+- **contact/index.html** — Contact (`/contact/`) — contact form (Formsubmit backend), business hours, Google Maps embed
 - **css/styles.css** — All styles (variables, components, responsive)
 - **js/main.js** — Mobile nav, sticky header, scroll animations, form validation, testimonial rotate, stats counter, review system (commented out)
 - **images/** — Photos (job site photos, logos, favicon, Snuggies)
@@ -24,7 +24,7 @@ Pages use clean URLs (directory-based, no .html extensions):
 - CSS custom properties for theming (yellow-forward: --yellow, --gold, --green-dark, etc.)
 - Georgia serif for headings, system sans-serif for body
 - IntersectionObserver for scroll animations
-- No backend — contact form is client-side only (no submission endpoint yet)
+- Contact form submits via Formsubmit.co (hashed endpoint) to quote@takeabough.com
 
 ## Hosting & Deployment
 - GitHub repo: MrAnderson0x/TakeABough (public)
@@ -57,8 +57,13 @@ Pages use clean URLs (directory-based, no .html extensions):
 - Take A Bough circle logo (lumberjack) used in nav and as favicon
 - `animate-on-scroll` class triggers fade-in via IntersectionObserver
 
+## Contact Form
+- Backend: Formsubmit.co (free, no signup required)
+- Submissions go to quote@takeabough.com
+- Hashed endpoint used in form action to prevent email scraping
+- Includes honeypot spam protection and client-side validation
+- Redirects to `/contact/?sent=true` on success, shows thank you message
+
 ## Pending
-- Contact form has no backend/submission endpoint
-- Map placeholder on contact page (no embed yet)
 - No analytics/GA tag integrated yet
 - Review system needs Google Sheet setup to activate
