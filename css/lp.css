@@ -194,8 +194,8 @@ svg{width:1em;height:1em;fill:currentColor;flex:none}
  .fact:nth-child(even){padding-left:16px;border-left:1px solid var(--line-d)}
  .fact:nth-child(n+3){border-top:1px solid var(--line-d)}
  .owner-img{aspect-ratio:4/3}
- .sticky-bar{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--white);padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));box-shadow:0 -6px 20px rgba(0,0,0,.16)}
- .sticky-bar .btn{padding:14px 10px;font-size:1rem}
+ .sticky-bar{display:grid;grid-template-columns:1.7fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--white);padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));box-shadow:0 -6px 20px rgba(0,0,0,.16)}
+ .sticky-bar .btn{padding:14px 8px;font-size:.95rem;white-space:nowrap;gap:6px}
 }
 @media (max-width:560px){
  .tiles{grid-template-columns:1fr}
