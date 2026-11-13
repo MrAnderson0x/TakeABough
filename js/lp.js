@@ -1,7 +1,7 @@
 /* Take a Bough landing pages: tracking hooks. Built by build_lps.py. */
 (function () {
   // Set the GA4 Measurement ID when the property exists, e.g. 'G-ABC123XYZ'.
-  var GA4_ID = '';
+  var GA4_ID = 'G-FHCHH7WE27';  // Brock's GA4, Take a Bough Tree Service, 2026-11-13
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
